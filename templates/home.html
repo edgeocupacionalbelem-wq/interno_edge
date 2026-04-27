@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>{{ title }}</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+<div class="mobile-topbar"><div class="brand"><div class="brand-badge">E</div><div>EDGE<small>Sistema interno</small></div></div><div class="mobile-nav"><select onchange="if(this.value) window.location.href=this.value"><option value="{{ url_for('home') }}" selected>🏠 Início</option><option value="{{ url_for('relatorios') }}">📊 Relatórios</option><option value="{{ url_for('encaminhamentos') }}">📄 Encaminhamentos</option><option value="{{ url_for('renumerador') }}">🔢 Renumerador</option><option value="{{ url_for('esocial') }}">🗂️ E-SOCIAL</option><option value="{{ url_for('fisico_mental') }}">🩺 Físico e Mental</option></select></div></div>
+<div class="app-layout">
+  <aside class="sidebar"><div class="brand"><div class="brand-badge">E</div><div>EDGE<small>Sistema interno</small></div></div><nav class="nav-card"><a class="nav-link active" href="{{ url_for('home') }}">🏠 Início</a><a class="nav-link" href="{{ url_for('relatorios') }}">📊 Relatórios</a><a class="nav-link" href="{{ url_for('encaminhamentos') }}">📄 Encaminhamentos</a><a class="nav-link" href="{{ url_for('renumerador') }}">🔢 Renumerador</a><a class="nav-link" href="{{ url_for('esocial') }}">🗂️ E-SOCIAL</a><a class="nav-link" href="{{ url_for('fisico_mental') }}">🩺 Físico e Mental</a><a class="nav-link nav-link-muted" href="{{ url_for('logout') }}">🚪 Sair</a></nav><div class="sidebar-note"><strong>Fluxo seguro</strong><p>Envie arquivos, revise a seleção e acompanhe o processamento com feedback visual.</p></div></aside>
+  <main class="main-area">
+    <div class="topbar"><div class="page-title"><h1>{{ title }}</h1><p>Painel inicial com acesso rápido às automações internas.</p></div><div class="user-pill"><div class="avatar"></div><div><strong>EDGE</strong><div class="muted">Operação interna</div></div></div></div>
+    <section class="hero-banner"><span class="badge">Sistema unificado</span><h2>Central de automações da empresa</h2><p>Escolha uma funcionalidade para gerar relatórios, encaminhamentos, recibos, E-SOCIAL ou documentos de físico e mental com menos retrabalho.</p></section>
+    <section class="dashboard-grid">
+      <article class="feature-card"><div class="feature-icon">📊</div><h3>Relatórios</h3><p>Gere relatório periódico e base mensal em ZIP.</p><a class="btn btn--primary" href="{{ url_for('relatorios') }}">Abrir módulo</a></article>
+      <article class="feature-card"><div class="feature-icon">📄</div><h3>Encaminhamentos</h3><p>Crie documentos com exames complementares organizados.</p><a class="btn btn--primary" href="{{ url_for('encaminhamentos') }}">Abrir módulo</a></article>
+      <article class="feature-card"><div class="feature-icon">🔢</div><h3>Renumerador</h3><p>Atualize numeração e data de recibos em Word ou ZIP.</p><a class="btn btn--primary" href="{{ url_for('renumerador') }}">Abrir módulo</a></article>
+      <article class="feature-card"><div class="feature-icon">🗂️</div><h3>E-SOCIAL</h3><p>Compare base com RELFUNCGERAL e gere PDFs por empresa.</p><a class="btn btn--primary" href="{{ url_for('esocial') }}">Abrir módulo</a></article>
+      <article class="feature-card"><div class="feature-icon">🩺</div><h3>Físico e Mental</h3><p>Preencha e baixe documentos em Word ou PDF.</p><a class="btn btn--primary" href="{{ url_for('fisico_mental') }}">Abrir módulo</a></article>
+    </section>
+  </main>
+</div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body></html>
